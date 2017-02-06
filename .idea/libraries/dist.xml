@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dist">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/slf4j-api-1.6.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/mina-core-2.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/MoopleDEV.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/mysql-connector-java-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/slf4j-jdk14-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/MoopleDEV/!svn/ver/118/dist
+END
+MoopleDEV.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/MoopleDEV/!svn/ver/120/dist/MoopleDEV.jar
+END
+mina-core-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/MoopleDEV/!svn/ver/120/dist/mina-core-2.0.7.jar
+END
+slf4j-api-1.6.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/MoopleDEV/!svn/ver/120/dist/slf4j-api-1.6.6.jar
+END
+mysql-connector-java-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/MoopleDEV/!svn/ver/117/dist/mysql-connector-java-bin.jar
+END
+slf4j-jdk14-1.7.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/MoopleDEV/!svn/ver/120/dist/slf4j-jdk14-1.7.5.jar
+END
