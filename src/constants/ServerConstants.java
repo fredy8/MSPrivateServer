@@ -30,12 +30,12 @@ public class ServerConstants {
     // Login Configuration
     public static final int CHANNEL_LOAD = 150;//Players per channel
     public static final long RANKING_INTERVAL = 3600000;
-    public static final boolean ENABLE_PIC = true;
+    public static final boolean ENABLE_PIC = false;
     //Event Configuration
     public static final boolean PERFECT_PITCH = false;
     public static final String EVENTS = "automsg KerningPQ Boats Subway AirPlane elevator";
     // IP Configuration
-    public static final String HOST = "localhost";
+    public static final String HOST = "192.168.1.68";
     //Database Configuration
     public static final String DB_URL = "jdbc:mysql://localhost:3306/MoopleDEV?autoReconnect=true";
     public static final String DB_USER = "root";

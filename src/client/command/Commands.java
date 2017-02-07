@@ -73,7 +73,8 @@ public class Commands {
     public static boolean executePlayerCommand(MapleClient c, String[] sub, char heading) {
         MapleCharacter chr = c.getPlayer();
         if (heading == '!' && chr.gmLevel() == 0) {
-            chr.yellowMessage("You may not use !" + sub + ", please try /" + sub);
+            String command = String.join(" ", sub);
+            chr.yellowMessage("You may not use !" + command + ", please try /" + command);
             return false;
         }
         switch (sub[0]) {

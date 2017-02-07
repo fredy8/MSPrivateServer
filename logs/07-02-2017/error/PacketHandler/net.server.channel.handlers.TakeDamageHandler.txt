@@ -1,0 +1,316 @@
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 4B 2D 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException: 15
+	at tools.data.input.ByteArrayByteStream.readByte(ByteArrayByteStream.java:54)
+	at tools.data.input.GenericLittleEndianAccessor.readInt(GenericLittleEndianAccessor.java:64)
+	at net.server.channel.handlers.TakeDamageHandler.handlePacket(TakeDamageHandler.java:65)
+	at net.MapleServerHandler.messageReceived(MapleServerHandler.java:127)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 27 33 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException: 15
+	at tools.data.input.ByteArrayByteStream.readByte(ByteArrayByteStream.java:54)
+	at tools.data.input.GenericLittleEndianAccessor.readInt(GenericLittleEndianAccessor.java:64)
+	at net.server.channel.handlers.TakeDamageHandler.handlePacket(TakeDamageHandler.java:65)
+	at net.MapleServerHandler.messageReceived(MapleServerHandler.java:127)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 DF 3E 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 BB 44 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 97 4A 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 73 50 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 4F 56 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 2B 5C 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 07 62 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 E3 67 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 9B 73 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 DF E3 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 03 ED 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 AF F5 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 AB F9 7F 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 1D 00 80 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 CB 06 80 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 15 7A 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 F1 7F 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 35 87 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 69 8F 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 07 97 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 E3 9C 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 BF A2 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 9B A8 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 97 AC 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 93 B0 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 6F B6 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 6B BA 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 104040000 - account ; fredy8
+All: 30 00 67 BE 86 26 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 81 FA 0B 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException: 15
+	at tools.data.input.ByteArrayByteStream.readByte(ByteArrayByteStream.java:54)
+	at tools.data.input.GenericLittleEndianAccessor.readInt(GenericLittleEndianAccessor.java:64)
+	at net.server.channel.handlers.TakeDamageHandler.handlePacket(TakeDamageHandler.java:65)
+	at net.MapleServerHandler.messageReceived(MapleServerHandler.java:127)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 79 11 0C 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException: 15
+	at tools.data.input.ByteArrayByteStream.readByte(ByteArrayByteStream.java:54)
+	at tools.data.input.GenericLittleEndianAccessor.readInt(GenericLittleEndianAccessor.java:64)
+	at net.server.channel.handlers.TakeDamageHandler.handlePacket(TakeDamageHandler.java:65)
+	at net.MapleServerHandler.messageReceived(MapleServerHandler.java:127)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 91 17 0C 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 6D 1D 0C 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 C1 23 0C 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------
+Error for player ; GameMaster on map ; 240060200 - account ; fredy8
+All: 30 00 A9 2C 0C 29 FC 00 D0 07 00 00 04 83 02
+Now: kevintjuh93 pwns
+java.lang.ArrayIndexOutOfBoundsException
+
+---------------------------------

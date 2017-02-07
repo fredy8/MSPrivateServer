@@ -21,6 +21,9 @@
  */
 package net.server;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+import com.sun.tools.corba.se.idl.InvalidArgument;
+
 import client.MapleCharacter;
 import client.SkillFactory;
 import constants.ServerConstants;
@@ -124,6 +127,7 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
+
         Properties p = new Properties();
         try {
             p.load(new FileInputStream("moople.ini"));
@@ -133,7 +137,6 @@ public class Server implements Runnable {
         }
 
         System.out.println("MoopleDEV v" + ServerConstants.VERSION + " starting up.\r\n");
-
 
         Runtime.getRuntime().addShutdownHook(new Thread(shutdown(false)));
         DatabaseConnection.getConnection();
@@ -219,7 +222,11 @@ public class Server implements Runnable {
         System.exit(0);// BOEIEND :D
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InvalidArgumentException {
+        if (System.getProperty("wzpath") == null) {
+            throw new InvalidArgumentException(new String[]{"wzpath argument not provided."});
+        }
+
         Server.getInstance().run();
     }
 
