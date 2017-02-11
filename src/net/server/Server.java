@@ -22,6 +22,7 @@
 package net.server;
 
 import com.sun.javaws.exceptions.InvalidArgumentException;
+import com.sun.net.httpserver.HttpServer;
 import com.sun.tools.corba.se.idl.InvalidArgument;
 
 import client.MapleCharacter;
@@ -44,6 +45,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+
+import net.AdminApiServer;
 import net.MapleServerHandler;
 import net.mina.MapleCodecFactory;
 import net.server.channel.Channel;
@@ -68,6 +71,7 @@ import tools.Pair;
 public class Server implements Runnable {
 
     private IoAcceptor acceptor;
+    private HttpServer adminServer;
     private List<Map<Integer, String>> channels = new LinkedList<>();
     private List<World> worlds = new ArrayList<>();
     private Properties subnetInfo = new Properties();
@@ -199,13 +203,20 @@ public class Server implements Runnable {
             System.exit(0);
         }
 
+        try {
+            createAdminServer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 30);
         acceptor.setHandler(new MapleServerHandler());
         try {
             acceptor.bind(new InetSocketAddress(8484));
-        } catch (IOException ex) {
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
+
         System.out.println("Listening on port 8484\r\n\r\n");
 
         if (Boolean.parseBoolean(p.getProperty("gmserver"))) {
@@ -562,6 +573,9 @@ public class Server implements Runnable {
                 System.out.println("Worlds + Channels are offline.");
                 acceptor.unbind();
                 acceptor = null;
+
+                adminServer.stop(0);
+
                 if (!restart) {
                     System.exit(0);
                 } else {
@@ -576,5 +590,13 @@ public class Server implements Runnable {
                 }
             }
         };
+    }
+
+    private void createAdminServer() throws IOException {
+        adminServer = HttpServer.create(new InetSocketAddress(8400), 0);
+        adminServer.createContext("/", new AdminApiServer());
+        adminServer.setExecutor(null);
+        adminServer.start();
+        System.out.println("Admin server started on port 8400");
     }
 }

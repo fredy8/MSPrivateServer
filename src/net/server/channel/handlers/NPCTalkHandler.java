@@ -53,6 +53,7 @@ public final class NPCTalkHandler extends AbstractMaplePacketHandler {
                     c.announce(MaplePacketCreator.enableActions());
                     return;
                 }
+                c.getPlayer().message(npc.getId() + "");
                 NPCScriptManager.getInstance().start(c, npc.getId(), null, null);
             }
         } else if (obj instanceof PlayerNPCs) {

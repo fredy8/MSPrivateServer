@@ -31,6 +31,7 @@ import client.inventory.MapleInventory;
 import client.inventory.MapleInventoryType;
 import client.inventory.ModifyInventory;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import net.AbstractMaplePacketHandler;
 import server.MapleInventoryManipulator;
@@ -97,6 +98,9 @@ public final class ScrollHandler extends AbstractMaplePacketHandler {
             scrollSuccess = Equip.ScrollResult.SUCCESS;
         }
         useInventory.removeItem(scroll.getPosition(), (short) 1, false);
+        boolean noneLeft = scroll.getQuantity() == 0;
+        c.announce(MaplePacketCreator.modifyInventory(false, Collections.singletonList(new ModifyInventory(noneLeft ? 3 : 1, scroll))));
+
         if (whiteScroll) {
             MapleInventoryManipulator.removeFromSlot(c, MapleInventoryType.USE, wscroll.getPosition(), (short) 1, false, false);
         }

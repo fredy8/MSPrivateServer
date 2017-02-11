@@ -41,8 +41,10 @@ import java.net.UnknownHostException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import net.server.Server;
 import net.server.channel.Channel;
@@ -59,6 +61,7 @@ import server.TimerManager;
 import server.events.gm.MapleEvent;
 import server.life.MapleLifeFactory;
 import server.life.MapleMonster;
+import server.life.MapleMonsterInformationProvider;
 import server.life.MapleNPC;
 import server.maps.MapleMap;
 import server.maps.MapleMapItem;
@@ -83,12 +86,23 @@ public class Commands {
                 c.announce(MaplePacketCreator.enableActions());
                 chr.message("Done.");
                 break;
-            case "rape":
-                List<Pair<MapleBuffStat, Integer>> list = new ArrayList<>();
-                list.add(new Pair<>(MapleBuffStat.MORPH, 8));
-                list.add(new Pair<>(MapleBuffStat.CONFUSE, 1));
-                chr.announce(MaplePacketCreator.giveBuff(0, 0, list));
-                chr.getMap().broadcastMessage(chr, MaplePacketCreator.giveForeignBuff(chr.getId(), list));
+            case "bosshp":
+                Collection<MapleMapObject> objects = chr.getMap().getMapObjects();
+                DecimalFormat dc = new DecimalFormat("0.0");
+                for (MapleMapObject object : objects) {
+                    if (object.getType() == MapleMapObjectType.MONSTER) {
+                        MapleMonster monster = (MapleMonster) object;
+                        if (monster.isBoss()) {
+                            int hp = monster.getHp();
+                            double maxHp = monster.getMaxHp();
+
+                            if (maxHp == 0)
+                                continue;
+
+                            chr.message(monster.getName() + ": " + monster.getHp() + "/" + monster.getMaxHp() + " (" + dc.format(hp / maxHp * 100) + "%)");
+                        }
+                    }
+                }
                 break;
             default:
                 if (chr.gmLevel() == 0) {
@@ -436,6 +450,35 @@ public class Commands {
                     player.message("Invalid world; highest number available: " + (server.getWorlds().size() - 1));
                 }
                 break;
+            case "dropinfo":
+                if (sub.length != 2) {
+                    player.message("Usage: dropinfo <monster_id>");
+                    break;
+                }
+
+                DecimalFormat dc = new DecimalFormat("0.0#####");
+
+                String dropInfoQuery = "SELECT itemid, chance from drop_data where dropperid = ?;";
+                try {
+                    try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(dropInfoQuery)) {
+                        ps.setString(1, sub[1]);
+                        ResultSet rs = ps.executeQuery();
+                        while(rs.next()) {
+                            String itemName = MapleItemInformationProvider.getInstance().getName(Integer.parseInt(rs.getString(1)));
+                            if (itemName != null) {
+                                int chance = rs.getInt(2);
+                                double adjustedChance = MapleMap.adjustDropChance(chance, player.getDropRate());
+                                double probability = adjustedChance / 1000000;
+                                player.message("(" + dc.format(probability * 100) + "%) " + itemName);
+                            }
+                        }
+                    }
+                    player.message("Done.");
+                } catch (Exception e) {
+                    player.message("Failed to add drop.");
+                }
+
+                break;
             case "saveall"://fyi this is a stupid command
                 for (World world : Server.getInstance().getWorlds()) {
                     for (MapleCharacter chr : world.getPlayerStorage().getAllCharacters()) {
@@ -456,6 +499,48 @@ public class Commands {
                     npc.setFh(player.getMap().getFootholds().findBelow(c.getPlayer().getPosition()).getId());
                     player.getMap().addMapObject(npc);
                     player.getMap().broadcastMessage(MaplePacketCreator.spawnNPC(npc));
+                }
+                break;
+            case "adddrop":
+                if (sub.length != 4) {
+                    player.message("Usage: adddrop <monster_id> <monster_drop> <chance (0-1000000)>");
+                    break;
+                }
+
+                String addQuery = "INSERT INTO drop_data (dropperid, itemid, chance) values (?, ?, ?);";
+                try {
+                    double adjustedChance = Integer.parseInt(sub[3]);
+                    //double adjustedChance = 1000000 * (1 - Math.pow((1000000 - chance) / 1000000, player.getDropRate()));
+                    int chance =  (int) (-1000000 * Math.pow(-adjustedChance / 1000000 + 1, 1.0 / player.getDropRate()) + 1000000);
+
+                    try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(addQuery)) {
+                        ps.setString(1, sub[1]);
+                        ps.setString(2, sub[2]);
+                        ps.setInt(3, chance);
+                        ps.executeUpdate();
+                    }
+                    MapleMonsterInformationProvider.getInstance().reloadDropsForMonster(Integer.parseInt(sub[1]));
+                    player.message("Done.");
+                } catch (Exception e) {
+                    player.message("Failed to add drop.");
+                }
+                break;
+            case "removedrop":
+                if (sub.length != 3) {
+                    player.message("Usage: removedrop <monster_id> <monster_drop>");
+                    break;
+                }
+                String deleteQuery = "DELETE FROM drop_data where dropperid = ? AND itemid = ?;";
+                try {
+                    try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(deleteQuery)) {
+                        ps.setString(1, sub[1]);
+                        ps.setString(2, sub[2]);
+                        ps.executeUpdate();
+                    }
+                    MapleMonsterInformationProvider.getInstance().reloadDropsForMonster(Integer.parseInt(sub[1]));
+                    player.message("Done.");
+                } catch (Exception e) {
+                    player.message("Failed to add drop.");
                 }
                 break;
             case "jobperson": {

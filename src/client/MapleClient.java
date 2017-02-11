@@ -44,6 +44,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import javax.script.ScriptEngine;
+
+import net.SendOpcode;
 import net.server.Server;
 import net.server.channel.Channel;
 import net.server.guild.MapleGuildCharacter;
@@ -963,6 +965,14 @@ public class MapleClient {
     }
 
     public synchronized void announce(final byte[] packet) {//MINA CORE IS A FUCKING BITCH AND I HATE IT <3
+        SendOpcode[] opcodes = SendOpcode.values();
+
+//        for (SendOpcode opcode : opcodes) {
+//            if (opcode.getValue() == packet[0]) {
+//                System.out.println("Sending " + opcode.toString());
+//            }
+//        }
+
         session.write(packet);
     }
 }

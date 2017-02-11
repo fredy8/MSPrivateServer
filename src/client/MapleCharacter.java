@@ -3848,6 +3848,7 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject {
     }
 
     public void setRates() {
+        int beginnerExpRate = 2;
         Calendar cal = Calendar.getInstance();
         cal.setTimeZone(TimeZone.getTimeZone("GMT-8"));
         World worldz = Server.getInstance().getWorld(world);
@@ -3861,13 +3862,13 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject {
         }
         if ((haveItem(5211000) && hr > 17 && hr < 21) || (haveItem(5211014) && hr > 6 && hr < 12) || (haveItem(5211015) && hr > 9 && hr < 15) || (haveItem(5211016) && hr > 12 && hr < 18) || (haveItem(5211017) && hr > 15 && hr < 21) || (haveItem(5211018) && hr > 14) || (haveItem(5211039) && hr < 5) || (haveItem(5211042) && hr > 2 && hr < 8) || (haveItem(5211045) && hr > 5 && hr < 11) || haveItem(5211048)) {
             if (isBeginnerJob()) {
-                this.expRate = 2;
+                this.expRate = 2 * beginnerExpRate;
             } else {
                 this.expRate = 2 * worldz.getExpRate();;
             }
         } else {
             if (isBeginnerJob()) {
-                this.expRate = 1;
+                this.expRate = beginnerExpRate;
             } else {
                 this.expRate = worldz.getExpRate();;
             }

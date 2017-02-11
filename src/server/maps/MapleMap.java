@@ -350,6 +350,10 @@ public class MapleMap {
         return ret;
     }
 
+    public static int adjustDropChance(double dropChance, int multiplier) {
+        return (int) (1000000 * (1 - Math.pow((1000000 - dropChance) / 1000000, multiplier)));
+    }
+
     private void dropFromMonster(final MapleCharacter chr, final MapleMonster mob) {
         if (mob.dropsDisabled() || !dropsOn) {
             return;
@@ -372,7 +376,7 @@ public class MapleMap {
 
         Collections.shuffle(dropEntry);
         for (final MonsterDropEntry de : dropEntry) {
-            if (Randomizer.nextInt(999999) < de.chance * chServerrate) {
+            if (Randomizer.nextInt(999999) < adjustDropChance(de.chance, chServerrate)) {
                 if (droptype == 3) {
                     pos.x = (int) (mobpos + (d % 2 == 0 ? (40 * (d + 1) / 2) : -(40 * (d / 2))));
                 } else {
@@ -401,7 +405,7 @@ public class MapleMap {
         final List<MonsterGlobalDropEntry> globalEntry = mi.getGlobalDrop();
         // Global Drops
         for (final MonsterGlobalDropEntry de : globalEntry) {
-            if (Randomizer.nextInt(999999) < de.chance) {
+            if (Randomizer.nextInt(999999) < adjustDropChance(de.chance, chr.getDropRate())) {
                 if (droptype == 3) {
                     pos.x = (int) (mobpos + (d % 2 == 0 ? (40 * (d + 1) / 2) : -(40 * (d / 2))));
                 } else {

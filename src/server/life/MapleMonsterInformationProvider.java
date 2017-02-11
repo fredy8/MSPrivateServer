@@ -132,4 +132,8 @@ public class MapleMonsterInformationProvider {
         globaldrops.clear();
         retrieveGlobal();
     }
+
+    public final void reloadDropsForMonster(final int monsterId) {
+        drops.remove(monsterId);
+    }
 }
